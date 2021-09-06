@@ -138,6 +138,7 @@ export async function onCreateNode({
       if (imageFile) {
         // add local image file to s3 object node
         node.localFile___NODE = imageFile.id; // eslint-disable-line @typescript-eslint/naming-convention
+        imageFile.sourceInstanceName = "S3Object";
       }
     } catch (error) {
       reporter.error(error);
